@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">My ICS342 Application</string>
+    <string name="app_name">My ICS342 WeatherApp</string>
+    <string name="city_name">St. Paul, MN</string>
+    <string name="current_temp">72</string>
+    <string name="feels_temp">Feels like</string>
+    <string name="low_temp">Low</string>
+    <string name="high_temp">High</string>
+    <string name="humidity_percentage">Humidity</string>
+    <string name="pressure">Pressure</string>
+    <string name="feels_temp_val">78°</string>
+    <string name="low_temp_val">65°</string>
+    <string name="high_temp_val">80°</string>
+    <string name="humidity_percentage_val">100%</string>
+    <string name="pressure_val">1023 hPa</string>
 </resources>
