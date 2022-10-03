@@ -12,4 +12,5 @@
     <string name="high_temp_val">80°</string>
     <string name="humidity_percentage_val">100%</string>
     <string name="pressure_val">1023 hPa</string>
+    <string name="forecast">Forecast</string>
 </resources>
