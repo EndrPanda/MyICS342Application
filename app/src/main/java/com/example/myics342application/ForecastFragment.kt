@@ -2,13 +2,18 @@ package com.example.myics342application
 
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
 import androidx.annotation.RequiresApi
+import androidx.compose.ui.res.stringResource
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavArgs
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myics342application.databinding.FragmentForecastBinding
+import com.example.myics342application.ui.CurrentConditionsScreen
+import com.example.myics342application.ui.ForecastScreen
 import java.time.LocalDateTime
 import java.time.ZoneOffset
 import java.time.format.DateTimeFormatter
@@ -31,17 +36,17 @@ private val forecastData = listOf(
     Forecast(1665885240L, 73F, 55F, 1665885240L, 1665885240L),
     Forecast(1665971640L, 79F, 57F, 1665971640L, 1665971640L),
 )
+class ForecastFragment : ComponentActivity() {
 
-class ForecastFragment : Fragment(R.layout.fragment_forecast){
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Log.d(TAG, "onCreate() called")
+        setContent {
+            ForecastScreen(forecastData)
+        }
+    }
 
-    private lateinit var binding: FragmentForecastBinding
-    private val args: ForecastFragmentArgs by navArgs()
-
-    @RequiresApi(Build.VERSION_CODES.O)
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding = FragmentForecastBinding.bind(view)
-        binding.forecastList.adapter = ForecastAdapter(forecastData)
-
+    companion object {
+        private const val TAG = "MainActivity"
     }
 }

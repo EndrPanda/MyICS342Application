@@ -2,28 +2,28 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/currentConditionsFragment">
+    app:startDestination="@id/currentConditionsScreen">
 
-    <fragment
-        android:id="@+id/currentConditionsFragment"
-        android:name="com.example.myics342application.CurrentConditionsFragment"
-        android:label="CurrentConditionsFragment" >
+    <composable
+        android:id="@+id/currentConditionsScreen"
+        android:name="com.example.myics342application.CurrentConditionsScreen"
+        android:label="CurrentConditionsScreen">
         <action
-            android:id="@+id/action_currentConditionsFragment_to_forecastFragment"
-            app:destination="@id/forecastFragment" >
+            android:id="@+id/action_CurrentConditions_to_LocationForecast"
+            app:destination="@id/LocationForecastScreen">
+
         </action>
+    </composable>
 
-    </fragment>
-
-    <fragment
-        android:id="@+id/forecastFragment"
-        android:name="com.example.myics342application.ForecastFragment"
-        android:label="ForecastFragment" >
-
+    <composable
+        android:id="@+id/LocationForecastScreen"
+        android:name="com.example.myics342application.LocationForecastScreen"
+        android:label="LocationForecastScreen">
         <argument
-            android:name="forecast"
+            android:name="locationForecast"
             app:nullable="false"
-            app:argType="com.example.myics342application.Forecast" />
+            app:argType="com.example.myics342application.LocationForecastScreen">
 
-    </fragment>
+        </argument>
+    </composable>
 </navigation>
